@@ -2,12 +2,11 @@ import { useState, useCallback } from "react";
 import { Alert, FlatList, Text, View } from "react-native";
 import axios from "axios";
 import { useFocusEffect } from "@react-navigation/native";
-import Header from "../../components/header"; // Header importieren
 import HistoryListItem from "../../components/HistoryListItem";
 import ItemSeparator from "../../components/ItemSeparator";
 import Spinner from "../../components/Spinner";
 
-const API_URL = "http://192.168.1.44:5003/get-translations";
+const API_URL = "http://192.168.121.36:5003/get-translations";
 
 export default function History() {
     const [records, setRecords] = useState([]);
@@ -40,8 +39,7 @@ export default function History() {
                 <Spinner />
             ) : (
                 <FlatList
-                    data={records}
-                    keyExtractor={(item, index) => item.id ? item.id.toString() : index.toString()}
+                    data={records}           
                     renderItem={({ item }) => <HistoryListItem item={item} />}
                     ItemSeparatorComponent={ItemSeparator}
                     ListEmptyComponent={<Text style={{ textAlign: "center", marginTop: 20 }}>Kein Verlauf vorhanden</Text>}

@@ -1,9 +1,8 @@
 import { StyleSheet, View, Text, Image, TouchableOpacity , Alert} from "react-native";
 import cloudy from "../../assets/cloudy_logo.png";
-import help_center_24dp_FFFFFF from "../../assets/help_center_24dp_FFFFFF.png";
-import settings_24dp_FFFFFF from "../../assets/settings_24dp_FFFFFF.png";
+import help_center_icon from "../../assets/help_center_24dp_FFFFFF.png";
+import settings_icon from "../../assets/settings_24dp_FFFFFF.png";
 import deleteIcon from "../../assets/deleteIcon.png";
-import { useNavigation } from "@react-navigation/native";
 
 export default function Header({ style, textStyle, showDeleteIcon, onDelete, onHelping, onSettings, ...props }) {
     const deleteHistory = () => {
@@ -16,7 +15,7 @@ export default function Header({ style, textStyle, showDeleteIcon, onDelete, onH
                     text: "Ja, löschen", 
                     onPress: async () => {
                         try {
-                            const response = await fetch("http://192.168.1.44:5003/verlauf-delete", {
+                            const response = await fetch("http://192.168.121.36:5003/verlauf-delete", {
                                 method: "DELETE",
                             });
 
@@ -60,11 +59,11 @@ export default function Header({ style, textStyle, showDeleteIcon, onDelete, onH
                         <Image source={deleteIcon} style={defaultStyle.iconSize} />
                     </TouchableOpacity>
                 )}
-                <TouchableOpacity onPress={handleHelp}> {/* Use handleHelp for navigation */}
-                    <Image source={help_center_24dp_FFFFFF} style={defaultStyle.iconSize} />
+                <TouchableOpacity onPress={handleHelp}>
+                    <Image source={help_center_icon} style={defaultStyle.iconSize} />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={handleSettings}> {/* Use handleSettings for navigation */}
-                    <Image source={settings_24dp_FFFFFF} style={defaultStyle.iconSize} />
+                <TouchableOpacity onPress={handleSettings}>
+                    <Image source={settings_icon} style={defaultStyle.iconSize} />
                 </TouchableOpacity>
             </View>
         </View>

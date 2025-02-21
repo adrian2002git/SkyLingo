@@ -1,10 +1,5 @@
-import { Slot } from "expo-router" 
-import { Text } from "react-native"
 import { Tabs } from "expo-router"
 import Ionicons from "@expo/vector-icons/Ionicons"
-// import cloudy.png from "../../assets/cloudy.png";
-import { Stack } from "expo-router/stack";
-import { createStackNavigator } from "react-native-screens";
 import Header from "../components/header";
 
 
@@ -39,22 +34,6 @@ return (
                             size={28}
                             style={{marginBottom: -3}}
                             name="language"
-                            color={color}
-                            />
-                    ),
-                }}
-                />
-
-            <Tabs.Screen
-                name="voicetranslator/index"
-                options={{
-                    header: () => <Header></Header>,
-                    title: "VoiceTranslator",
-                    tabBarIcon: ({ color }) => (
-                        <Ionicons
-                            size={28}
-                            style={{marginBottom: -3}}
-                            name="mic"
                             color={color}
                             />
                     ),

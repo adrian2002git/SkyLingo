@@ -27,7 +27,7 @@ export default function Translator() {
   const [targetLanguage, setTargetLanguage] = useState("de");
   const [sourceLanguage, setSource] = useState("");
 
-  const API_URL = "http://192.168.1.44:5003/save-translate";
+  const API_URL = "http://192.168.121.36:5003/save-translate";
 
   useEffect(() => {
     const handler = setTimeout(() => {
@@ -45,7 +45,7 @@ export default function Translator() {
 
     const translateText = async () => {
       try {
-        const res = await fetch("http://192.168.1.44:5000/translate", {
+        const res = await fetch("http://192.168.121.36:5000/translate", {
           method: "POST",
           body: JSON.stringify({
             q: debouncedText,

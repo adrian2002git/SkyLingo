@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/get-translations", (req, res) => {
-  db.all("SELECT * FROM verlauf ORDER BY id DESC LIMIT 30", [], (err, rows) => {
+  db.all("SELECT * FROM verlauf ORDER BY id DESC", [], (err, rows) => {
     if (err) {
       res.status(500).json({ error: err.message });
       return;

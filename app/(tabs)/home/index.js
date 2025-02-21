@@ -1,5 +1,4 @@
 import { View, Text, StyleSheet } from "react-native"
-import { useState, useEffect } from "react";
 import { Image } from "react-native";
 import cloudy_logo from "../../../assets/cloudy_logo.png"
 
