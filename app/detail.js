@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useLocalSearchParams, useNavigation } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
+
 export default function Detail() {
     const { translationId, inputLanguage, outputLanguage, text, translation } = useLocalSearchParams();
     const navigation = useNavigation();
